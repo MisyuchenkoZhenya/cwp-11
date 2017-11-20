@@ -1,0 +1,8 @@
+{
+    "name": "cwp-10",
+    "author": "Zhenya",
+    "dependencies": {
+        "express": "^4.16.2",
+        "uid": "0.0.2"
+    }
+}
