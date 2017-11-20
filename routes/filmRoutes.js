@@ -1,5 +1,5 @@
 const JH = require('../helpers/json_helper');
-const jsonPath = `./top250.json`;
+const jsonPath = './data/top250.json';
 const Film = require('../models/film');
 const sorting = require('../helpers/sorting');
 const fs = require('fs');

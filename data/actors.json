@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "Ридли Скотт",
+        "birth": "30 ноября, 1937",
+        "films": 219,
+        "liked": 2011,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_10015.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Сэмюэл Л. Джексон",
+        "birth": "21 декабря, 1948",
+        "films": 356,
+        "liked": 4938,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7164.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Риз Уизерспун",
+        "birth": "22 марта, 1976",
+        "films": 173,
+        "liked": 2615,
+        "photo": "https://st.kp.yandex.net/images/actor_iphone/iphone360_7635.jpg"
+    }
+]
