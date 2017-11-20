@@ -1,7 +1,7 @@
-const JH = require('../helpers/json_helper');
+const JH = require('../../helpers/json_helper');
 const jsonPath = './data/top250.json';
-const Film = require('../models/film');
-const sorting = require('../helpers/sorting');
+const Film = require('../../models/film');
+const sorting = require('../../helpers/sorting');
 const fs = require('fs');
 const express = require('express');
 

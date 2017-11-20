@@ -1,7 +1,7 @@
-const JH = require('../helpers/json_helper');
+const JH = require('../../helpers/json_helper');
 const jsonPath = './data/actors.json';
-const Actor = require('../models/actor');
-const sorting = require('../helpers/sorting');
+const Actor = require('../../models/actor');
+const sorting = require('../../helpers/sorting');
 const fs = require('fs');
 const express = require('express');
 
@@ -9,7 +9,8 @@ let actors = JH.loadJson(jsonPath);
 const router = express.Router();
 
 router.get('/readall', (req, res) => {
-    res.send(actors);
+    sorting.sortByField(actors, "liked");
+    res.send(actors.reverse());
 });
 
 router.get('/read', (req, res) => {
@@ -27,7 +28,6 @@ router.post('/create', (req, res) => {
         let actor = new Actor(req.body);
         if(!actor.isValid()) throw new Error;
         actors.push(actor.get());
-        sorting.sortByField(actors, "position");
         fs.writeFileSync(jsonPath, JSON.stringify(actors));
         res.send(actor);
     }
@@ -44,7 +44,6 @@ router.post('/update', (req, res) => {
                 actors[index][field] = req.body[field];
             }
         }
-        sorting.sortByField(actors, "position");
         fs.writeFileSync(jsonPath, JSON.stringify(actors));
         res.send("Updating completed successfully");
     }

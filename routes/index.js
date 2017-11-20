@@ -1,5 +1,5 @@
-const filmRoutes = require('./filmRoutes');
-const actorRoutes = require('./actorRoutes');
+const filmRoutes = require('./api/films');
+const actorRoutes = require('./api/actors');
 
 module.exports = (app) => {
     app.use("/api/films", filmRoutes);
