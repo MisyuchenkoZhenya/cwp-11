@@ -20,7 +20,8 @@ class Actor {
         for(let elem in this.actor){
             if(!this.actor[elem]) return false;
         }
-        if( /* some rules */true ) return false;
+        if( this.actor.films < 0 ||
+            this.actor.liked < 0 ) return false;
         return true;
     }
 }
