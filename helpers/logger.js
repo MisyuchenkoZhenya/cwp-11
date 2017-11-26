@@ -3,15 +3,20 @@ const fs = require('fs');
 const logPath = "./data/log.json";
 let logArray = getJSON();
 
-module.exports = (req, res, next) => {
-    logArray.push({
-        "date": getDate(),
-        "path": req.baseUrl,
-        "params": req.method === 'GET' ? req.query : req.body,
-     });
-
-    updateJson(logArray);
-    next();
+module.exports = {
+    "writeLog": (req, res, next) => {
+        logArray.push({
+            "date": getDate(),
+            "path": req.baseUrl,
+            "params": req.method === 'GET' ? req.query : req.body,
+         });
+    
+        updateJson(logArray);
+        next();
+    },
+    "getLog": (req, res) => {
+        res.send(logArray);
+    }
 }
 
 function getDate(){
